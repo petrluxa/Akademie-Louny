@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tenisová akademie Louny — návrhy webu</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo/01-kurt/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7F9;--card:#FFFFFF;--ink:#0B1D3F;--muted:#5A6479;--line:#DEE3EC;
+  --navy:#0B1D3F;--blue:#1E50D2;--red:#D7263D;--soft:#EDF1F7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+
+/* hlavička */
+.top{padding:72px 0 56px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;background:
+  linear-gradient(var(--bg),var(--bg)) padding-box}
+.top::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:100% 120px,150px 100%;mask-image:linear-gradient(90deg,transparent 35%,#000 100%);-webkit-mask-image:linear-gradient(90deg,transparent 35%,#000 100%)}
+.top .wrap{position:relative;z-index:1}
+.marks{display:flex;gap:14px;margin-bottom:34px}
+.mark{width:64px;height:64px;border-radius:16px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;box-shadow:0 18px 30px -24px rgba(11,29,63,.45)}
+.mark img{width:40px;height:40px;object-fit:contain}
+.mark.dark{background:#070F2B;border-color:#070F2B}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.top h1{font-size:clamp(38px,6vw,72px);margin:18px 0 20px}
+.top h1 em{font-style:italic;font-weight:500;color:var(--blue)}
+.lead{max-width:720px;font-size:18px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:30px;font-size:14px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+
+/* karty variant */
+main{padding:56px 0 96px}
+.label{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.card:hover,.card:focus-visible{transform:translateY(-6px);border-color:#C3CDDC;box-shadow:0 40px 70px -46px rgba(11,29,63,.55)}
+.card:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.thumb{aspect-ratio:16/10;background:var(--soft);position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s ease}
+.card:hover .thumb img{transform:scale(1.03)}
+.thumb .no{position:absolute;left:16px;top:14px;font:600 12px/1 'Inter';letter-spacing:.16em;background:rgba(255,255,255,.92);color:var(--ink);padding:7px 10px;border-radius:100px}
+.card-b{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.card-b h3{font-size:28px;margin-bottom:4px}
+.card-b .sub{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.card-b p{font-size:15px;color:var(--muted)}
+.sw{display:flex;gap:8px;margin-top:22px}
+.sw span{width:28px;height:28px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(11,29,63,.14)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{font-size:12px;padding:6px 11px;border-radius:100px;background:var(--soft);color:#3D4860}
+.open{margin-top:auto;padding-top:24px;font-weight:600;font-size:15px;color:var(--ink);display:flex;align-items:center;gap:8px}
+.open::after{content:"→";color:var(--red);transition:transform .3s}
+.card:hover .open::after{transform:translateX(4px)}
+
+/* loga */
+.logos{margin-top:84px}
+.logos h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:12px}
+.logos .intro{max-width:760px;color:var(--muted);margin-bottom:30px}
+.lg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.tile .stage{display:flex;align-items:center;justify-content:center;padding:44px 30px;min-height:210px}
+.tile .stage img.word{width:100%;max-width:320px;height:auto;max-height:120px;object-fit:contain}
+.tile .strip{display:flex;align-items:center;gap:14px;padding:14px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.tile .strip img{width:56px;height:56px;flex:none}
+.tile .strip span{font-size:13px;line-height:1.45;color:var(--muted)}
+.tile .strip b{display:block;color:var(--ink);font-weight:600}
+.tile.dk .stage{background:#070F2B}
+.tile.dk .stage img.word{max-width:250px}
+.tile.dk .strip{background:#0D1B45;border-color:#0D1B45}
+.tile.dk .strip span{color:#A9B6D8}
+.tile.dk .strip b{color:#F5F7FF}
+.tile .tb{padding:22px 26px 26px;display:flex;flex-direction:column;flex:1}
+.tile h3{font-size:22px;margin-bottom:8px}
+.tile p{font-size:14.5px;color:var(--muted)}
+.tile .more{margin-top:auto;padding-top:18px;font-size:14px;font-weight:600;color:var(--blue)}
+.tile .more:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* panely */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:84px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px 34px}
+.panel h2{font-size:24px;margin-bottom:16px}
+.panel ul{list-style:none;display:grid;gap:12px}
+.panel li{position:relative;padding-left:22px;font-size:15px;color:var(--muted)}
+.panel li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--red)}
+.panel.q li::before{background:var(--blue)}
+.panel li b{color:var(--ink);font-weight:600}
+
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:13.5px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media (max-width:1060px){.cards,.lg{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+@media (max-width:680px){
+  .wrap{padding:0 20px}
+  .top{padding:52px 0 40px}
+  .cards,.lg{grid-template-columns:1fr}
+  .marks .mark{width:54px;height:54px;border-radius:14px}
+  .marks .mark img{width:34px;height:34px}
+  .panel{padding:26px 24px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="marks" aria-hidden="true">
+      <span class="mark"><img src="assets/logo/01-kurt/znak.svg" alt=""></span>
+      <span class="mark"><img src="assets/logo/02-erb/znak.svg" alt=""></span>
+      <span class="mark dark"><img src="assets/logo/03-hala/znak.svg" alt=""></span>
+    </div>
+    <p class="eyebrow">Návrhy nového webu · akademielouny.cz</p>
+    <h1>Tenisová akademie <em>Louny</em></h1>
+    <p class="lead">Tři směry pro web nové akademie v&nbsp;barvách modrá, červená a&nbsp;bílá, luxusně a&nbsp;moderně.
+      Každý návrh je úvodní stránka se stejným obsahem a&nbsp;s&nbsp;vlastním konceptem loga. Liší se náladou:
+      světlá moderní, světlá klasická a&nbsp;tmavá. Klikněte na kartu a&nbsp;projděte si návrh celý, i&nbsp;na mobilu.</p>
+    <div class="meta">
+      <span>Klient: <b>Tenisová akademie Louny</b> · pod TK Louny, se záštitou SETES</span>
+      <span>Doména: <b>akademielouny.cz</b></span>
+      <span>Zadání: <b>luxusní · moderní · modrá, červená, bílá</b></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="label">Tři návrhy úvodní stránky</p>
+    <div class="cards">
+      <a class="card" href="01-kurt.html">
+        <div class="thumb"><img src="nahled-01.jpg" alt="Náhled návrhu 01 Kurt" width="960" height="600" loading="lazy"></div>
+        <div class="card-b">
+          <h3>Kurt</h3>
+          <div class="sub">01 · Světlá moderní</div>
+          <p>Bílá, inkoustová navy a&nbsp;jediná červená tečka – míček z&nbsp;loga. Přesná mřížka, vlasové
+             čáry kurtu a&nbsp;velké písmo. Nejčistší a&nbsp;nejsportovnější ze tří.</p>
+          <div class="sw" aria-hidden="true"><span style="background:#FAFBFD"></span><span style="background:#0A1F4D"></span><span style="background:#1E50D2"></span><span style="background:#E52421"></span></div>
+          <div class="tags"><span>Světlá</span><span>Moderní</span><span>Archivo</span></div>
+          <span class="open">Otevřít návrh</span>
+        </div>
+      </a>
+
+      <a class="card" href="02-erb.html">
+        <div class="thumb"><img src="nahled-02.jpg" alt="Náhled návrhu 02 Erb" width="960" height="600" loading="lazy"></div>
+        <div class="card-b">
+          <h3>Erb</h3>
+          <div class="sub">02 · Světlá klasická</div>
+          <p>Porcelán, hluboká navy a&nbsp;heraldická červená, serifové písmo a&nbsp;erb se siluetou lounského
+             chrámu. Sekce v&nbsp;pořadí menu, číslované I–IX. Prestiž soukromé akademie.</p>
+          <div class="sw" aria-hidden="true"><span style="background:#F8F6F1"></span><span style="background:#13284B"></span><span style="background:#2D5DA8"></span><span style="background:#B5122B"></span></div>
+          <div class="tags"><span>Světlá</span><span>Klasika</span><span>Fraunces</span></div>
+          <span class="open">Otevřít návrh</span>
+        </div>
+      </a>
+
+      <a class="card" href="03-hala.html">
+        <div class="thumb"><img src="nahled-03.jpg" alt="Náhled návrhu 03 Hala" width="960" height="600" loading="lazy"></div>
+        <div class="card-b">
+          <h3>Hala</h3>
+          <div class="sub">03 · Tmavá moderní</div>
+          <p>Noční navy, elektrická modř a&nbsp;červená jiskra jako světla haly v&nbsp;zimní sezoně. Skleněné
+             panely, svítící časová osa a&nbsp;mapa kraje jako síť budoucích partnerských klubů.</p>
+          <div class="sw" aria-hidden="true"><span style="background:#070F2B"></span><span style="background:#0D1B45"></span><span style="background:#2F6BFF"></span><span style="background:#FF3B4E"></span></div>
+          <div class="tags"><span>Tmavá</span><span>Filmová</span><span>Jost</span></div>
+          <span class="open">Otevřít návrh</span>
+        </div>
+      </a>
+    </div>
+
+    <section class="logos" aria-labelledby="loga">
+      <h2 id="loga">Tři koncepty loga</h2>
+      <p class="intro">Akademie zatím logo nemá, proto každý návrh webu nese vlastní koncept: logo akademie
+        a&nbsp;k&nbsp;němu odznak <b>Partnerský klub</b> pro kluby z&nbsp;regionu. Všechny jsou vektorové, s&nbsp;textem
+        převedeným do křivek, mají barevnou i&nbsp;jednobarevnou verzi a&nbsp;jsou dost jednoduché pro tisk i&nbsp;výšivku.</p>
+      <div class="lg">
+        <div class="tile">
+          <div class="stage">
+            <img class="word" src="assets/logo/01-kurt/logo-vodorovne.svg" alt="Logo 01 Kurt">
+          </div>
+          <div class="strip"><img src="assets/logo/01-kurt/partnersky-klub.svg" alt="Odznak Partnerský klub ke konceptu 01"><span><b>Logo II · Partnerský klub</b>odznak pro kluby z&nbsp;regionu</span></div>
+          <div class="tb">
+            <h3>01 · Kurt</h3>
+            <p>Písmeno A&nbsp;jako tenisový kurt v&nbsp;perspektivě: postranní čáry tvoří nohy, síť břevno a&nbsp;červený
+               míček leží ve vzdáleném poli.</p>
+            <a class="more" href="assets/logo/01-kurt/nahled.png">Arch loga →</a>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="stage">
+            <img class="word" src="assets/logo/02-erb/logo-vodorovne.svg" alt="Logo 02 Erb">
+          </div>
+          <div class="strip"><img src="assets/logo/02-erb/partnersky-klub.svg" alt="Odznak Partnerský klub ke konceptu 02"><span><b>Logo II · Partnerský klub</b>odznak pro kluby z&nbsp;regionu</span></div>
+          <div class="tb">
+            <h3>02 · Erb</h3>
+            <p>Štít korunovaný siluetou trojdílné stanové střechy chrámu sv. Mikuláše, nejznámější lounské
+               dominanty. V&nbsp;poli červený tenisový míč.</p>
+            <a class="more" href="assets/logo/02-erb/nahled.png">Arch loga →</a>
+          </div>
+        </div>
+        <div class="tile dk">
+          <div class="stage">
+            <img class="word" src="assets/logo/03-hala/logo-blok-negativ.svg" alt="Logo 03 Hala">
+          </div>
+          <div class="strip"><img src="assets/logo/03-hala/partnersky-klub-negativ.svg" alt="Odznak Partnerský klub ke konceptu 03"><span><b>Logo II · Partnerský klub</b>odznak pro kluby z&nbsp;regionu</span></div>
+          <div class="tb">
+            <h3>03 · Hala</h3>
+            <p>Písmeno O&nbsp;ve slově LOUNY nahrazuje tenisový míček s&nbsp;jedinou červenou čočkou. Název a&nbsp;sport
+               v&nbsp;jednom slově.</p>
+            <a class="more" href="assets/logo/03-hala/nahled.png">Arch loga →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="two">
+      <div class="panel">
+        <h2>Co je v&nbsp;náhledech ukázkové</h2>
+        <ul>
+          <li><b>Texty o&nbsp;akademii a&nbsp;partnerských klubech</b> jsou ze zadání akademie, jen typograficky upravené.</li>
+          <li><b>Kalendář zimní sezony 2026/2027</b> ukazuje rozložení akcí. Termíny jsou ukázkové, ale kempy a&nbsp;soustředění sedí na skutečné školní prázdniny v&nbsp;okrese Louny.</li>
+          <li><b>Trenéři a&nbsp;kontakty</b> mají zástupná jména a&nbsp;telefon +420 000 000 000. Skutečný je jen Vojta Vágner.</li>
+          <li><b>Partneři</b> jsou zatím volná místa pro loga.</li>
+          <li><b>Fotky</b> jsou ilustrační (Unsplash, Pexels). Nahradí je vlastní fotky z&nbsp;tréninků a&nbsp;areálu.</li>
+          <li><b>Formuláře</b> přihlášek jen předvádějí chování, nic se neodesílá.</li>
+        </ul>
+      </div>
+      <div class="panel q">
+        <h2>Co budeme potřebovat od akademie</h2>
+        <ul>
+          <li><b>Přesný název a&nbsp;výběr loga.</b> Pozor, v&nbsp;adresáři ČTS už je klub „Tenisová akademie Březno u&nbsp;Loun“.</li>
+          <li><b>Text přípravného střediska</b> od Vladana a&nbsp;jeho celé jméno.</li>
+          <li><b>Trenéry</b> (jména, trenérské třídy, představení, fotky) a&nbsp;<b>kontakty</b> (kdo co má na starosti, telefony, e-maily).</li>
+          <li><b>Program zimní sezony</b> a&nbsp;sociální sítě akademie.</li>
+          <li><b>Potvrzení dvou oprav v&nbsp;textu:</b> „tréninkové středisko mládeže“ (oficiální název ČTS) a&nbsp;schválení akademie výkonným výborem SETES 20. 9. 2026.</li>
+          <li><b>Věk skupin:</b> zadání uvádí starší žáky 13–15 let, kategorie ČTS „starší žactvo“ je 13–14 let.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><span>Návrhy pro Tenisovou akademii Louny · říjen 2026</span><span>Ilustrační fotografie: Unsplash, Pexels · Mapová data © přispěvatelé OpenStreetMap</span></div>
+</footer>
+</body>
+</html>
